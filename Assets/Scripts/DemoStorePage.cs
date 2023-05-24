@@ -39,6 +39,8 @@ public class DemoStorePage : MonoBehaviour, IStoreListener
         ProductCatalog catalog = JsonUtility.FromJson<ProductCatalog>((request.asset as TextAsset).text);
         Debug.Log($"Loaded catalog with {catalog.allProducts.Count} items");
 
+        
+        // Тестовый магазин Unity
         StandardPurchasingModule.Instance().useFakeStoreUIMode = FakeStoreUIMode.StandardUser;
         StandardPurchasingModule.Instance().useFakeStoreAlways = true;
         
@@ -83,6 +85,8 @@ public class DemoStorePage : MonoBehaviour, IStoreListener
         OnPurchaseCompleted = null;
         LoadingOverlay.SetActive(false);
 
+        // здесь логика передачи товара игроку или разблокировки и сохранения
+        
         return PurchaseProcessingResult.Complete;
 
     }
